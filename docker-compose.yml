@@ -1,0 +1,39 @@
+version: '3.5'
+services:
+  mysqlDB:
+    image: mysql:5.7
+    hostname: mysqldb
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - TZ=Asia/Bangkok
+      - MYSQL_ROOT_PASSWORD=docker
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=docker
+      - MYSQL_ROOT_HOST=%
+    command:
+      [
+        'mysqld',
+        '--character-set-server=utf8',
+        '--collation-server=utf8_general_ci'
+      ]
+    ports:
+      - '3308:3306'
+    volumes:
+      - /Users/patjawat/Downloads/:/home/
+      - ./docker/mysql5.7/data:/var/lib/mysql
+      - ./docker/mysql5.7/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  phpmyadmin_mysql:
+    image: phpmyadmin
+    restart: always
+    links:
+      - mysqlDB:db
+    ports:
+      - 8300:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: docker
+      PMA_HOST: mysqlDB
+      UPLOAD_LIMIT: 300M
