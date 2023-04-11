@@ -10,4 +10,4 @@ const COMPONENTS_DYNAMIC: any[] = [];
   imports: [SharedModule, MediaRoutingModule],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
 })
-export class MediaModule {}
+export class MediaModule { }

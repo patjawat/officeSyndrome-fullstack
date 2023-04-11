@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss'],
 })
-export class TooltipComponent {}
+export class TooltipComponent { }

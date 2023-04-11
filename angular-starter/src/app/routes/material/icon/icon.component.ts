@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) { }
 
   deleteIcon() {
     this.snackBar.open('Item deleted', '', { duration: 2000 });

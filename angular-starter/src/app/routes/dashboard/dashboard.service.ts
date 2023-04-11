@@ -186,7 +186,7 @@ export class DashboardService {
     },
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getData() {
     return ELEMENT_DATA;

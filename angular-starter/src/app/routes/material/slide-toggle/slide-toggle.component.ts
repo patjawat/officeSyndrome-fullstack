@@ -11,7 +11,7 @@ export class SlideToggleComponent {
   termsToggle = false;
   musicToggle = false;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) { }
 
   onFormSubmit() {
     this.snackBar.open('Terms and condistions accepted!', '', { duration: 2000 });

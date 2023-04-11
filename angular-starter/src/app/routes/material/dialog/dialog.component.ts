@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class DialogComponent {
   fruitSelectedOption = '';
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   openFruitDialog() {
     const dialogRef = this.dialog.open(DialogFruitComponent);
@@ -34,20 +34,20 @@ export class DialogComponent {
   selector: 'dialog-fruit',
   templateUrl: 'dialog-fruit.html',
 })
-export class DialogFruitComponent {}
+export class DialogFruitComponent { }
 
 @Component({
   selector: 'dialog-welcome',
   templateUrl: 'dialog-welcome.html',
 })
-export class DialogWelcomeComponent {}
+export class DialogWelcomeComponent { }
 
 @Component({
   selector: 'dialog-neptune-dialog',
   templateUrl: './dialog-neptune.html',
 })
 export class DialogNeptuneComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog) { }
 
   showInStackedDialog() {
     this.dialog.open(DialogNeptuneIFrameComponent);
@@ -65,7 +65,7 @@ export class DialogNeptuneComponent {
   ],
   templateUrl: './dialog-neptune-iframe.html',
 })
-export class DialogNeptuneIFrameComponent {}
+export class DialogNeptuneIFrameComponent { }
 
 @Component({
   selector: 'dialog-address-form',
@@ -78,4 +78,4 @@ export class DialogNeptuneIFrameComponent {}
   ],
   templateUrl: 'dialog-address-form.html',
 })
-export class DialogAddressFormComponent {}
+export class DialogAddressFormComponent { }

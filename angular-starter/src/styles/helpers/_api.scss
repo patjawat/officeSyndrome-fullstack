@@ -19,11 +19,12 @@
 @use 'icon';
 
 // Generate Helpers
-@each $key, $utility in $utilities {
+@each $key,
+$utility in $utilities {
   $values: map.get($utility, values);
 
   // If the values are a list or string, convert it into a map
-  @if meta.type-of($values) == 'string' or meta.type-of(list.nth($values, 1)) != 'list' {
+  @if meta.type-of($values)=='string' or meta.type-of(list.nth($values, 1)) !='list' {
     $values: list.zip($values, $values);
   }
 
@@ -31,13 +32,13 @@
   $property-class-prefix: map.get($utility, class);
 
   // Utility class maybe empty, (e.g. with position class)
-  $property-class-prefix-hyphen: if(
-    $property-class-prefix == '',
-    $property-class-prefix,
-    $property-class-prefix + '-'
-  );
+  $property-class-prefix-hyphen: if($property-class-prefix =='',
+      $property-class-prefix,
+      $property-class-prefix + '-'
+    );
 
-  @each $class-modifier, $value in $values {
+  @each $class-modifier,
+  $value in $values {
     .#{$property-class-prefix-hyphen + $class-modifier} {
       @each $property in $properties {
         #{$property}: $value !important;

@@ -11,4 +11,4 @@ import { Component } from '@angular/core';
     </error-code>
   `,
 })
-export class Error500Component {}
+export class Error500Component { }

@@ -3,11 +3,10 @@ $grid-gutter: 16px !default;
 
 $breakpoints: (
   xsmall: 0,
-  small:  600px,
+  small: 600px,
   medium: 960px,
-  large:  1280px,
-  xlarge: 1920px
-) !default;
+  large: 1280px,
+  xlarge: 1920px) !default;
 
 $breakpoint-infixs: (
   xsmall: '',
@@ -15,4 +14,4 @@ $breakpoint-infixs: (
   medium: 'md',
   large: 'lg',
   xlarge: 'xl'
-) !default;
+  ) !default;

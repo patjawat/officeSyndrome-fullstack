@@ -7,4 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['shared.scss'],
   host: { class: 'demo-sidenav-app' },
 })
-export class SidenavBasicComponent {}
+export class SidenavBasicComponent { }

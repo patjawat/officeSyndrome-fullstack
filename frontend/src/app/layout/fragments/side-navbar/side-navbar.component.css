@@ -1,4 +1,4 @@
-::ng-deep .mat-expansion-panel-header {
+/* ::ng-deep .mat-expansion-panel-header {
     padding: 0 16px !important;
 }
 
@@ -32,4 +32,14 @@
 
 ::ng-deep .mat-nav-list .mat-list-item.is-active .mat-list-item-content {
     padding: 0 8px;
+} */
+
+mat-list-item[_ngcontent-hun-c34] {
+    margin: 0px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.643em;
+    font-family: Poppins, sans-serif;
+    color: inherit;
+    padding-left: 11.2px;
 }

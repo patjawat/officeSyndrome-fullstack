@@ -1,0 +1,80 @@
+<div class="sidebar" [ngClass]="isOpen ? 'open' : null">
+    <div class="logo_details">
+      <i class="bx bxl-audible icon"></i>
+      <div class="logo_name">HRMS</div>
+      <i class="bx bx-menu" id="btn" (click)="clickEvent()"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a [routerLink]="['/home']">
+          <i class="bx bx-grid-alt"></i>
+          <span class="link_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a [routerLink]="['/employee']">
+          <i class="bx bx-user"></i>
+          <span class="link_name">employee</span>
+        </a>
+        <span class="tooltip">employee</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-chat"></i>
+          <span class="link_name">Message</span>
+        </a>
+        <span class="tooltip">Message</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="link_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-folder"></i>
+          <span class="link_name">File Manger</span>
+        </a>
+        <span class="tooltip">File Manger</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cart-alt"></i>
+          <span class="link_name">Order</span>
+        </a>
+        <span class="tooltip">Order</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="link_name">Settings</span>
+        </a>
+        <span class="tooltip">Settings</span>
+      </li>
+      <li class="profile">
+        <div class="profile_details">
+          <img src="assets/Responsive Sidebar With Collapsing/profile.jpeg" alt="profile image">
+          <div class="profile_content">
+            <div class="name">Anna Jhon</div>
+            <div class="designation">Admin</div>
+          </div>
+        </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+  <section class="home-section">
+    <div class="container">
+
+        <div class="text">{{componentTitle}}</div>
+        <router-outlet></router-outlet>
+    </div>
+  </section>

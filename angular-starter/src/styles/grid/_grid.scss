@@ -12,8 +12,8 @@
   margin-right: 0;
   margin-left: 0;
 
-  > .col,
-  > [class*='col-'] {
+  >.col,
+  >[class*='col-'] {
     padding-right: 0;
     padding-left: 0;
   }
@@ -27,8 +27,9 @@
 // large:  1280px
 // xlarge: 1920px
 
-@each $breakpoint, $infix in variables.$breakpoint-infixs {
-  @if ($breakpoint== 'xsmall') {
+@each $breakpoint,
+$infix in variables.$breakpoint-infixs {
+  @if ($breakpoint=='xsmall') {
     @include mixins.loop-grid-columns(variables.$grid-columns, $infix);
   }
 

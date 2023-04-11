@@ -1,0 +1,91 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Sarabun:wght@100;200;300;400;500&display=swap');
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  color: rgb(36, 44, 58);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.643em;
+  // font-family: Poppins, sans-serif;
+  // font-family: 'Noto Sans Thai', sans-serif;
+  font-family: 'Prompt', sans-serif !important;
+  // font-family: 'Sarabun', sans-serif;
+  background-color: rgb(240, 242, 248);
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.card {
+  border: none;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(36, 44, 58) !important;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+  border-radius: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 6px -2px, rgba(0, 0, 0, 0.05) 0px 2px 2px -1px !important;
+  overflow: hidden !important;
+}
+
+// icon
+.icon-shape {
+  display: inline-flex;
+  padding: 12px;
+  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+button:not(:disabled),
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+.btn {
+  // box-shadow: rgba(76, 78, 100, 0.42) 0px 4px 8px -4px;
+}
+
+.btn-primary {
+  box-shadow: rgba(76, 78, 100, 0.42) 0px 4px 8px -4px;
+  // box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 6px -2px, rgba(0, 0, 0, 0.05) 0px 2px 2px -1px!important;
+}

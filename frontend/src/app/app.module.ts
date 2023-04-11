@@ -25,6 +25,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatlayoutComponent } from './matlayout/matlayout.component';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { FragmentsModule } from './layout/fragments/fragments.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { FragmentsModule } from './layout/fragments/fragments.module';
     LayoutComponent,
     MatlayoutComponent,
     MatHeaderComponent,
+    NavbarComponent,
+    ProfileComponent,
+    LayoutAdminComponent,
   ],
   imports: [
     BrowserModule,

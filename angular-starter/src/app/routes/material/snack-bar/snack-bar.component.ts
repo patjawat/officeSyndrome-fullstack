@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./snack-bar.component.scss'],
 })
 export class SnackBarComponent {
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) { }
 
   openDiscoPartySnackBar() {
     this.snackBar.open('Disco party!', 'Dismiss', { duration: 5000 });

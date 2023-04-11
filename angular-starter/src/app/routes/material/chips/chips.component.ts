@@ -35,7 +35,7 @@ export class ChipsComponent {
     { name: 'Warn', color: 'warn' },
   ];
 
-  constructor(public snackBar: MatSnackBar) {}
+  constructor(public snackBar: MatSnackBar) { }
 
   displayMessage(message: string): void {
     this.message = message;

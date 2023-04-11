@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ButtonComponent {
   counter = 0;
 
-  constructor(public snackBar: MatSnackBar) {}
+  constructor(public snackBar: MatSnackBar) { }
 
   openSnackBar(message: string) {
     this.snackBar.open(message, '', {

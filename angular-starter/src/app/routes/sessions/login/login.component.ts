@@ -19,7 +19,7 @@ export class LoginComponent {
     rememberMe: [false],
   });
 
-  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService) {}
+  constructor(private fb: FormBuilder, private router: Router, private auth: AuthService) { }
 
   get username() {
     return this.loginForm.get('username')!;

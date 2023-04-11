@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CardComponent {
   showProgress = false;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar) { }
 
   openSnackbar(message: string) {
     this.snackBar.open(message, '', { duration: 2000 });

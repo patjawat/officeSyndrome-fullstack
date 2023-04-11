@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './bootstrap5/layout.component';
 import { MatlayoutComponent } from './matlayout/matlayout.component';
 import { MainShellComponent } from './layout/fragments/main-shell/main-shell.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
 const routes: Routes = [
   {
@@ -13,12 +15,16 @@ const routes: Routes = [
   },
   {
     path: '',
-    // component: LayoutComponent,
-    component: MainShellComponent,
+    component: LayoutComponent,
+    // component: LayoutAdminComponent,
     children: [
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
       },
       {
         path: 'sales',
@@ -27,9 +33,6 @@ const routes: Routes = [
       { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
     ]
   }
-  // {
-  //   path: '', component: HomeComponent, pathMatch: 'full'
-  // },
   // { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 
 

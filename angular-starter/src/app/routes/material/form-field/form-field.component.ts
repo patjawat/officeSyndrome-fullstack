@@ -16,5 +16,5 @@ export class FormFieldComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

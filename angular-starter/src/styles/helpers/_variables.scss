@@ -2,7 +2,8 @@
 
 // Utility Map
 
-$utilities: () !default;
+$utilities: (
+  ) !default;
 
 // Spacing
 
@@ -16,8 +17,7 @@ $spacers: (
   16: $spacer,
   24: $spacer * 1.5,
   32: $spacer * 2,
-  48: $spacer * 3
-) !default;
+  48: $spacer * 3) !default;
 $negative-spacers: negativify-map($spacers) !default;
 
 // Border
@@ -28,8 +28,7 @@ $borders: (
   1: 1px solid $border-color,
   2: 2px solid $border-color,
   4: 4px solid $border-color,
-  8: 8px solid $border-color
-) !default;
+  8: 8px solid $border-color) !default;
 
 // Border radius
 
@@ -40,8 +39,7 @@ $radius: (
   8: $radius-base * 2,
   12: $radius-base * 3,
   16: $radius-base * 4,
-  full: 9999px
-) !default;
+  full: 9999px) !default;
 
 // Text
 
@@ -54,8 +52,7 @@ $font-wieghts: (
   600: 600,
   700: 700,
   800: 800,
-  900: 900
-) !default;
+  900: 900) !default;
 
 $font-sizes: (
   0: 0,
@@ -64,8 +61,7 @@ $font-sizes: (
   14: 14px,
   16: 16px,
   18: 18px,
-  20: 20px
-) !default;
+  20: 20px) !default;
 
 // Sizing
 
@@ -79,5 +75,4 @@ $sizes: (
   75: 75%,
   80: 80%,
   full: 100%,
-  auto: auto
-) !default;
+  auto: auto) !default;

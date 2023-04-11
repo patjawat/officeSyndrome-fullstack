@@ -46,16 +46,16 @@ export class TabComponent {
   selector: 'sunny-routed-content',
   template: 'Having a lot of light from the sun.',
 })
-export class SunnyTabContentComponent {}
+export class SunnyTabContentComponent { }
 
 @Component({
   selector: 'rainy-routed-content',
   template: 'A rainy period of time is one when it rains a lot',
 })
-export class RainyTabContentComponent {}
+export class RainyTabContentComponent { }
 
 @Component({
   selector: 'foggy-routed-content',
   template: 'If the weather is foggy, there is fog',
 })
-export class FoggyTabContentComponent {}
+export class FoggyTabContentComponent { }

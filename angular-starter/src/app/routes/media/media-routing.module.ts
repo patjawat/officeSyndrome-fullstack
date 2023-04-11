@@ -8,4 +8,4 @@ const routes: Routes = [{ path: 'gallery', component: MediaGalleryComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MediaRoutingModule {}
+export class MediaRoutingModule { }

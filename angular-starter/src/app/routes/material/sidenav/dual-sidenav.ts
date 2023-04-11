@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   host: { class: 'demo-sidenav-app' },
 })
 export class SidenavDualComponent {
-  constructor(private snackbar: MatSnackBar) {}
+  constructor(private snackbar: MatSnackBar) { }
 
   play(list: string) {
     this.snackbar.open(`Playing "${list}"`, '', { duration: 1000 });

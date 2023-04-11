@@ -10,4 +10,4 @@ import { Component } from '@angular/core';
     ></error-code>
   `,
 })
-export class Error403Component {}
+export class Error403Component { }

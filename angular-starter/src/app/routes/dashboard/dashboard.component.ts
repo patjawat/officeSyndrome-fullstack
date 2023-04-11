@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     private ngZone: NgZone,
     private dashboardSrv: DashboardService,
     private settings: SettingsService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.notifySubscription = this.settings.notify.subscribe(res => {

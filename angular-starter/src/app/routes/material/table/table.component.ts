@@ -53,7 +53,7 @@ export class BasicDataSource extends DataSource<UserData> {
     return this.dataChange;
   }
 
-  disconnect() {}
+  disconnect() { }
 }
 
 export class SortDataSource extends DataSource<UserData> {
@@ -70,7 +70,7 @@ export class SortDataSource extends DataSource<UserData> {
     return merge(...displayDataChanges).pipe(map(() => this.getSortedData()));
   }
 
-  disconnect() {}
+  disconnect() { }
 
   getSortedData(): UserData[] {
     const data = [...exampleData];
@@ -104,5 +104,5 @@ export class PaginatedDataSource extends DataSource<UserData> {
     );
   }
 
-  disconnect() {}
+  disconnect() { }
 }

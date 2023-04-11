@@ -111,4 +111,4 @@ const COMPONENTS_DYNAMIC: any[] = [
   imports: [SharedModule, CdkTableModule, MaterialRoutingModule],
   declarations: [...COMPONENTS, ...COMPONENTS_DYNAMIC],
 })
-export class MaterialModule {}
+export class MaterialModule { }

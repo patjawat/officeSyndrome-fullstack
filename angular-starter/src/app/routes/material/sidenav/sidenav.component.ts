@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
 })
-export class SidenavComponent {}
+export class SidenavComponent { }
