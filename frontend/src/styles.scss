@@ -1,4 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.css";
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0px;
+    color: rgb(36, 44, 58);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.643em;
+    font-family: Poppins, sans-serif;
+    background-color: rgb(240, 242, 248);
+  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  mat-sidenav-content{
+    background-color: #f0f2f8 !important;
+  }

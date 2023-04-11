@@ -24,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import {FormsModule} from '@angular/forms';
 
@@ -55,7 +55,8 @@ import {FormsModule} from '@angular/forms';
     MatProgressBarModule,
     MatDividerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -78,7 +79,8 @@ import {FormsModule} from '@angular/forms';
     MatCardModule,
     MatProgressBarModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   providers: [MatDatepickerModule],
 })

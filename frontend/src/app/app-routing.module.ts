@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './layout/layout.component';
-// import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from './bootstrap5/layout.component';
+import { MatlayoutComponent } from './matlayout/matlayout.component';
+import { MainShellComponent } from './layout/fragments/main-shell/main-shell.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: LayoutComponent,
+    // component: LayoutComponent,
+    component: MainShellComponent,
     children: [
       {
         path: 'home',

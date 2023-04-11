@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="toggleSideBar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+      <span>APP LOGO</span>
+  
+      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+          <li>
+            <button mat-icon-button [matMenuTriggerFor]="theme">
+              <mat-icon>format_color_fill</mat-icon>
+            </button>
+            <mat-menu #theme="matMenu">
+              <div class="btn-wrapper">
+                <button mat-mini-fab class="btn btn-default" (click)="selectedTheme='default'"></button>
+                <button mat-mini-fab class="btn btn-purple" (click)="selectedTheme='purple'"></button>
+                <button mat-mini-fab class="btn btn-pink" (click)="selectedTheme='pink'"></button>
+                <button mat-mini-fab class="btn btn-deep-orange" (click)="selectedTheme='deep-orange'"></button>
+              </div>
+            </mat-menu>
+          </li>
+          <li>
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>person_outline</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                Sign out
+              </button>
+            </mat-menu>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>

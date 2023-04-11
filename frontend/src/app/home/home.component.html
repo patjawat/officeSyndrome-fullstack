@@ -1,2 +1,30 @@
-home
+
+<mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>Subtitle</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium sit tempora numquam vel odit
+        dolorem qui quod sint distinctio! Quasi exercitationem tempore voluptas quam voluptatibus distinctio ex magni
+        repellendus?
+      </p>
+  
+      <p [@bodyExpansion]="state" class="expandable-content">
+        [expandable] Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem, praesentium sit tempora
+        numquam vel odit
+        dolorem qui quod sint distinctio! Quasi exercitationem tempore voluptas quam voluptatibus distinctio ex magni
+        repellendus?
+      </p>
+    <mat-divider>
+    </mat-divider>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button mat-button (click)="toggle()" color="primary">EXPAND</button>
+    </mat-card-actions>
+  
+  </mat-card>
+  
 <button class="btn btn-success" [routerLink]="['/employee']">Employee</button>

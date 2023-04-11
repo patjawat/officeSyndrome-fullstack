@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,11 +19,22 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LayoutComponent } from './bootstrap5/layout.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatlayoutComponent } from './matlayout/matlayout.component';
+import { MatHeaderComponent } from './mat-header/mat-header.component';
+import { FragmentsModule } from './layout/fragments/fragments.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent,
+    DashboardComponent,
+    LayoutComponent,
+    MatlayoutComponent,
+    MatHeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,9 +53,12 @@ import { MatMenuModule } from '@angular/material/menu';
     MatCardModule,
     ReactiveFormsModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    FragmentsModule
+  
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
