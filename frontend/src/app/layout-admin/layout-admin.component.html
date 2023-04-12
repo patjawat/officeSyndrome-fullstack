@@ -1,4 +1,5 @@
-<div class="sidebar" [ngClass]="isOpen ? 'open' : null">
+<div class="sidebar" [ngClass]="isOpen == true ? 'open' : null">
+
     <div class="logo_details">
       <i class="bx bxl-audible icon"></i>
       <div class="logo_name">HRMS</div>
@@ -74,6 +75,8 @@
   <section class="home-section">
     <div class="container">
 
+
+      
         <div class="text">{{componentTitle}}</div>
         <router-outlet></router-outlet>
     </div>

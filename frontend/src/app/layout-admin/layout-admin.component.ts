@@ -20,22 +20,23 @@ export class LayoutAdminComponent {
     });
   }
     
-  ngOnInit() {
-
-
+  async ngOnInit() {
+    
     this.router.events.subscribe(data => {
       if (data instanceof ActivationStart) {
          console.log(data)
         this.componentTitle = data.snapshot.data['title'];
       }
-
     });
-     
+
+    // check เปิดปิด sidebar menu
+    this.isOpen = (localStorage.getItem('isOpen')) == 'true' ? true : false;
+   
+    
   }
 
   clickEvent(){
-    console.log('click');
     this.isOpen = !this.isOpen;
-    
+    localStorage.setItem('isOpen', String(this.isOpen));
   }
 }

@@ -1,5 +1,36 @@
-<div class="container">
+<div class="page-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <h3 class="page-title">Employee</h3>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="admin-dashboard.html">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Employee</li>
+      </ul>
+    </div>
+    <div class="col-auto float-end ms-auto">
+      <a
+        href="#"
+        class="btn btn-warning rounded-pill px-3"
+        data-bs-toggle="modal"
+        data-bs-target="#add_employee"
+        ><i class="fa fa-plus"></i> Add Employee</a
+      >
+      <div class="view-icons">
+        <a href="employees.html" class="grid-view btn btn-link active"
+          ><i class="fa fa-th"></i
+        ></a>
+        <a href="employees-list.html" class="list-view btn btn-link"
+          ><i class="fa fa-bars"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <p>employee works!</p>
-    <button class="btn btn-success" [routerLink]="['/']">Home</button>
+<div class="container">
+  <p>employee works!</p>
+  <button class="btn btn-success" [routerLink]="['/']">Home</button>
+  <app-lsit></app-lsit>
 </div>
