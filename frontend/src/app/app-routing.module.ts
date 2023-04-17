@@ -67,7 +67,8 @@ const routes: Routes = [
     path: 'users',
     component: UserLayoutComponent,
      loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
-  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) }
+  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
+  { path: 'setting', loadChildren: () => import('./setting/setting.module').then(m => m.SettingModule) }
   // { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 
 
