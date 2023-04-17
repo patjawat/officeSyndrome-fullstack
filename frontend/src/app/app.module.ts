@@ -38,7 +38,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { UsersModule } from './users/users.module';
-import { SettingLayoutComponent } from './latouts/setting-layout/setting-layout.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,7 @@ import { SettingLayoutComponent } from './latouts/setting-layout/setting-layout.
     ProfileComponent,
     LayoutAdminComponent,
     LoginComponent,
-    LoginLayoutComponent,
-    SettingLayoutComponent
+    LoginLayoutComponent
   ],
   imports: [
     BrowserModule,
