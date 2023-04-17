@@ -1,2 +1,203 @@
-<app-mat-header></app-mat-header>
-<router-outlet></router-outlet>
+<!-- <app-mat-header></app-mat-header> -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img
+      src="https://codedthemes.com/demos/admin-templates/materially/react/default/static/media/logo.73cf184b11041549695909ac089e4bbf.svg"
+      alt=""
+    />
+    <!-- <span>APP LOGO</span>  -->
+    <button
+      mat-icon-button
+      (click)="drawer.toggle()"
+      style="margin-left: 100px"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="example-container" hasBackdrop="false">
+  <mat-drawer #drawer mode="side" opened="true">
+    <div class="side-menu">
+   
+     
+      <!-- <mat-card>
+        <mat-card-content> 
+            <button mat-button [routerLink]="['/home']">
+                <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
+                    <mat-icon>home</mat-icon> 
+                  </button> Dashbroad
+            </button>
+        </mat-card-content>
+      </mat-card> -->
+      <mat-card>
+        <mat-card-content>
+            <a [routerLink]="['/']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">Dashbroad</h3>
+                        <span class="card-sub-title">แผงควบคุม</span>
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content>
+            <a [routerLink]="['/employee']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-address-card"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">Employee</h3>
+                        <span class="card-sub-title">ระบบข้อมูลพนักงาน</span>
+
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-content class="p-10">
+            <a [routerLink]="['/employee']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-money-bill-transfer"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">payroll</h3>
+                        <span class="card-sub-title">ระบบเงินเดือน</span>
+
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+      </mat-card>
+     
+      <mat-card>
+        <mat-card-content class="p-10">
+            <a [routerLink]="['/employee']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-business-time"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">Time Attendance</h3>
+                        <span class="card-sub-title">ระบบการปฏิบัติงาน</span>                        
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card>
+        <mat-card-content class="p-10">
+            <a [routerLink]="['/employee']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-person-digging"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">P4P</h3>
+                        <span class="card-sub-title">ระบบ onstop service</span>                        
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+      </mat-card>
+     
+      <mat-card>
+        <mat-card-content class="p-10">
+            <a [routerLink]="['/settings']">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="icon-shape-custom bg-secondary text-white rounded-circle">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h3 class="card-title text-uppercase text-muted mb-0">Setting</h3>
+                        <span class="card-sub-title">การตั้งค่าระบบ</span>                        
+
+                    </div> 
+                </div>
+            </a>
+        </mat-card-content>
+      </mat-card>
+     
+    </div>
+
+    <!-- <mat-nav-list class="side-navnar">
+      <ng-container *ngFor="let menu of menuList | async; index as i">
+        <ng-container
+          [ngTemplateOutlet]="menu.children ? childMenu : parentMenu"
+          [ngTemplateOutletContext]="{ menu: menu }"
+        >
+        </ng-container>
+      </ng-container>
+    </mat-nav-list> -->
+
+    <ng-template #parentMenu let-menu="menu">
+      <mat-list-item
+        [routerLink]="menu.routerLink"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon>{{ menu.icon }}</mat-icon> {{ menu.text }}
+      </mat-list-item>
+    </ng-template>
+
+    <ng-template #childMenu let-menu="menu">
+      <mat-expansion-panel [class.mat-elevation-z0]="true">
+        <mat-expansion-panel-header>
+          <mat-icon mat-list-icon>{{ menu.icon }}</mat-icon
+          >{{ menu.text }}
+        </mat-expansion-panel-header>
+
+        <mat-nav-list>
+          <mat-list-item
+            [routerLink]="submenu.routerLink"
+            *ngFor="let submenu of menu.children"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <mat-icon>{{ submenu.icon }}</mat-icon> {{ submenu.text }}
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </ng-template>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

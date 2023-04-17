@@ -2,13 +2,13 @@
 <div class="page-header">
   <div class="row align-items-center">
     <div class="col-6">
-      <h3 class="page-title">Employee</h3>
       <ul class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="admin-dashboard.html">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Employee</li>
       </ul>
+      <h3 class="page-title">Employee</h3>
     </div>
     <div class="col-auto float-end ms-auto d-flex justify-content-end">
       
@@ -21,13 +21,16 @@
         ></a>
       </div>
 
-      <a
+      <!-- <a
         [routerLink]="['/employee/add']"
         class="btn btn-warning rounded-pill px-3"
         data-bs-toggle="modal"
         data-bs-target="#add_employee"
         ><i class="fa fa-plus"></i> สร้างรายการใหม่</a
-      >
+      > -->
+      <button mat-raised-button color="primary" class="rounded-pill px-3" (click)="openAddEditEmpForm()">
+        <i class="fa fa-plus"></i> สร้างรายการใหม่
+      </button>
 
     </div>
   </div>

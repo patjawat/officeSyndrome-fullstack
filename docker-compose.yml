@@ -9,7 +9,7 @@ services:
     environment:
       - TZ=Asia/Bangkok
       - MYSQL_ROOT_PASSWORD=docker
-      - MYSQL_USER=root
+      # - MYSQL_USER=root
       - MYSQL_PASSWORD=docker
       - MYSQL_ROOT_HOST=%
     command:

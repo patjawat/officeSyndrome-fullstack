@@ -1,12 +1,17 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button mat-icon-button (click)="toggleSideBar()">
+    
+      <span>APP LOGO</span> <button mat-icon-button (click)="toggleSideBar()">
         <mat-icon>menu</mat-icon>
       </button>
-  
-      <span>APP LOGO</span>
-  
-      <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+       <mat-icon>share</mat-icon>
+     </button>
+      <!-- <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
         <ul fxLayout="row" fxLayoutGap="20px">
           <li>
             <button mat-icon-button [matMenuTriggerFor]="theme">
@@ -38,6 +43,6 @@
             </mat-menu>
           </li>
         </ul>
-      </div>
+      </div> -->
     </mat-toolbar-row>
   </mat-toolbar>

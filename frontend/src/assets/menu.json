@@ -9,9 +9,9 @@
         "routerLink": "/employee"
     },
     {
-        "text": "Customer",
+        "text": "Profile",
         "icon": "people",
-        "routerLink": "/customer/manage"
+        "routerLink": "/profile"
     },
     {
         "text": "Supplier",

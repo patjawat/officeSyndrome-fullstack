@@ -31,7 +31,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles_old.scss"
             ],
             "scripts": []
           },
@@ -94,10 +94,7 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss",
-              "src/styles_old.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": [
               "src/scripts.js",

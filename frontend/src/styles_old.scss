@@ -1,7 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Sarabun:wght@100;200;300;400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Sarabun:wght@100;200;300;400;500&display=swap');
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -34,19 +33,15 @@ body {
   height: 100%;
 }
 
-body {
+body{
   margin: 0px;
-  color: rgb(36, 44, 58);
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.643em;
-  // font-family: Poppins, sans-serif;
-  // font-family: 'Noto Sans Thai', sans-serif;
-  font-family: 'Prompt', sans-serif !important;
-  // font-family: 'Sarabun', sans-serif;
-  background-color: rgb(240, 242, 248);
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: rgb(36, 44, 58);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.643em;
+    font-family: Prompt, sans-serif !important;
+    background-color: rgb(240, 242, 248);
+    font-weight: 400;
 }
 
 .card {
@@ -58,6 +53,24 @@ body {
   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 6px -2px, rgba(0, 0, 0, 0.05) 0px 2px 2px -1px !important;
   overflow: hidden !important;
 }
+
+.mat-typography h3
+ {
+    font: 400 16px/28px Roboto, sans-serif;
+    letter-spacing: .009375em;
+    margin: 0 0 16px;
+    font-family: kanit;
+}
+
+// mat-card {
+//   border: none;
+//   background-color: rgb(255, 255, 255) !important;
+//   color: rgb(36, 44, 58) !important;
+//   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+//   border-radius: 10px !important;
+//   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 6px -2px, rgba(0, 0, 0, 0.05) 0px 2px 2px -1px !important;
+//   overflow: hidden !important;
+// }
 
 // icon
 .icon-shape {
@@ -93,4 +106,7 @@ button:not(:disabled),
 
 
 
+mat-dialog-container{
+  margin-top: 80px;
+}
 
