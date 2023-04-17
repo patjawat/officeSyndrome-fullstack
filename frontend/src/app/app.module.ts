@@ -1,5 +1,9 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { TokenInterceptorService } from './core/auth/services/token-interceptor.service';
+import {CookieService} from 'ngx-cookie-service';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +32,13 @@ import { FragmentsModule } from './layout/fragments/fragments.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { LoginComponent } from './login/login.component';
+import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
+import { UsersModule } from './users/users.module';
+import { SettingLayoutComponent } from './latouts/setting-layout/setting-layout.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +52,9 @@ import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
     NavbarComponent,
     ProfileComponent,
     LayoutAdminComponent,
+    LoginComponent,
+    LoginLayoutComponent,
+    SettingLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -60,10 +74,15 @@ import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
     ReactiveFormsModule,
     MatGridListModule,
     MatMenuModule,
-    FragmentsModule
+    FragmentsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    UsersModule
   
   ],
-  providers: [],
+  providers: [CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
+
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
