@@ -2,20 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './bootstrap5/layout.component';
-import { MatlayoutComponent } from './matlayout/matlayout.component';
+// import { MatlayoutComponent } from './layouts/matlayout/matlayout.component';
 import { MainShellComponent } from './layout/fragments/main-shell/main-shell.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
+// import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { AuthGuard } from './core/auth/guards/auth.guard';
 import { LoginComponent } from './login/login.component';
-import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
+// import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { UserLayoutComponent } from './users/user-layout/user-layout.component';
+import { MatlayoutComponent } from './matlayout/matlayout.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MatlayoutComponent,
-  //   redirectTo: 'home',
+    //   redirectTo: 'home',
 
     canActivate: [AuthGuard],
     children: [
@@ -26,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: LoginLayoutComponent,
+    // component: LoginLayoutComponent,
     children: [{ path: 'login', component: LoginComponent }],
     // canActivate: [RoleGuard]
   },
@@ -46,7 +48,7 @@ const routes: Routes = [
   {
     path: '',
     // component: LayoutComponent,
-    component: MatlayoutComponent,
+    // component: MatlayoutComponent,
     children: [
       {
         path: 'home',
@@ -63,12 +65,16 @@ const routes: Routes = [
       { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) },
     ]
   },
-  { 
+  {
     path: 'users',
     component: UserLayoutComponent,
-     loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
-  { path: 'settings', loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule) },
-  { path: 'setting', loadChildren: () => import('./setting/setting.module').then(m => m.SettingModule) }
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: 'settings',
+    component: MatlayoutComponent,
+    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
+  },
   // { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 
 

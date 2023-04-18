@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMenu } from 'src/app/core/interface/IMenu';
 import { HttpclientService } from 'src/app/core/services/HttpClientServices';
- 
+import * as AOS from "aos";
+
+
 export interface Section {
   name: string;
   updated: Date;
@@ -20,10 +23,41 @@ export class MatlayoutComponent {
   @Output() selectedTheme?: string;
 
   menuList?: Observable<IMenu[]>;
-  constructor(private httpService: HttpclientService) { }
+  route:string = '';
+  setting:boolean = false;
+  constructor(
+    private router: Router,
+    private httpService: HttpclientService
+    ) { }
+
+    activeItem: string = '';
+
+  setActiveItem(page: string) {
+    this.activeItem = page;
+    //console.log(this.activeItem);
+  }
 
   ngOnInit() {
+
+    AOS.init({
+      duration: 750,
+      delay: 150,
+    })
+    
     this.menuList = this.httpService.getList<IMenu>("/assets/menu.json")
+    this.route = this.router.url;
+    console.log(this.router.url);
+    if(this.router.url == '/settings'){
+      this.setting = true;
+    }else{
+      this.setting = false;
+    }
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      AOS.refresh()
+    }, 500)
   }
 
   

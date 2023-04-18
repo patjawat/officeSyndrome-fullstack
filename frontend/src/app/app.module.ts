@@ -26,18 +26,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './bootstrap5/layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MatlayoutComponent } from './matlayout/matlayout.component';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { FragmentsModule } from './layout/fragments/fragments.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
-import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { UsersModule } from './users/users.module';
+import { MatlayoutComponent } from './matlayout/matlayout.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,6 @@ import { UsersModule } from './users/users.module';
     MatHeaderComponent,
     NavbarComponent,
     ProfileComponent,
-    LayoutAdminComponent,
     LoginComponent,
     LoginLayoutComponent
   ],

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from '../material.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { SettingsComponent } from './settings.component';
   ],
   imports: [
     CommonModule,
-    SettingsRoutingModule
+    SettingsRoutingModule,
+    AngularMaterialModule
+
   ]
 })
 export class SettingsModule { }

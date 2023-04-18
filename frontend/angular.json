@@ -31,9 +31,13 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles_old.scss"
+              "src/styles_old.scss",
+              "node_modules/aos/dist/aos.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+
+            ]
           },
           "configurations": {
             "production": {
