@@ -9,34 +9,57 @@
       alt=""
     /> -->
     <!-- <span>APP LOGO</span>  -->
-    <button mat-icon-button style="margin-left: 100px" (click)="drawer.toggle()">
+    <button
+      mat-icon-button
+      style="margin-left: 100px"
+      (click)="drawer.toggle()"
+    >
       <mat-icon>menu</mat-icon>
     </button>
 
     <span class="example-spacer"></span>
-    <button mat-fab [matMenuTriggerFor]="menu" >
+    <button mat-fab [matMenuTriggerFor]="menu">
       <i class="fa-regular fa-user"></i>
     </button>
 
-    <mat-menu #menu="matMenu" >
-      <button mat-menu-item id="settings"
-        (click)="setActiveItem('settings')">
-              <fa-icon [icon]="['fas', 'cog']"
-          [ngStyle]="{'color' : activeItem==='settings' ? 'blue' : 'rgba(0,0,0,.54)' }" class="font-awesome" size="lg">
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item id="settings" (click)="setActiveItem('settings')">
+        <fa-icon
+          [icon]="['fas', 'cog']"
+          [ngStyle]="{
+            color: activeItem === 'settings' ? 'blue' : 'rgba(0,0,0,.54)'
+          }"
+          class="font-awesome"
+          size="lg"
+        >
         </fa-icon>
         <span
-          [ngStyle]="{'font-weight': activeItem==='settings' ? 'bold' : 'normal' }"> SETTINGS</span>
+          [ngStyle]="{
+            'font-weight': activeItem === 'settings' ? 'bold' : 'normal'
+          }"
+        >
+          SETTINGS</span
+        >
       </button>
-      <button mat-menu-item 
-        (click)="setActiveItem('profile')">
-        <fa-icon [icon]="['fas', 'address-card']"
-          [ngStyle]="{'color' : activeItem==='profile' ? 'blue' : 'rgba(0,0,0,.54)' }" class="font-awesome" size="lg">
+      <button mat-menu-item (click)="setActiveItem('profile')">
+        <fa-icon
+          [icon]="['fas', 'address-card']"
+          [ngStyle]="{
+            color: activeItem === 'profile' ? 'blue' : 'rgba(0,0,0,.54)'
+          }"
+          class="font-awesome"
+          size="lg"
+        >
         </fa-icon>
         <span
-          [ngStyle]="{'font-weight': activeItem==='profile' ? 'bold' : 'normal' }">PROFILE</span>
+          [ngStyle]="{
+            'font-weight': activeItem === 'profile' ? 'bold' : 'normal'
+          }"
+          >PROFILE</span
+        >
       </button>
     </mat-menu>
- 
+
     <!-- <button
       mat-icon-button
       class="example-icon favorite-icon"
@@ -55,17 +78,17 @@
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" hasBackdrop="false">
-  
   <mat-drawer #drawer mode="side" opened="true">
-
     <div class="profile-card">
       <div class="header">
-          <h2 class="mb-0">ปัจวัฒน์ ศรีบุญเรือง</h2>
-          <h4>patjawat@gmail.com</h4>
+        <h2 class="mb-0">ปัจวัฒน์ ศรีบุญเรือง</h2>
+        <h4>patjawat@gmail.com</h4>
       </div>
-      <img src="https://patjawat.github.io/images/avatar.jpg" alt="Soufiane FADIL">
-  </div>
-
+      <img
+        src="https://patjawat.github.io/images/avatar.jpg"
+        alt="Soufiane FADIL"
+      />
+    </div>
 
     <div class="side-menu" data-aos="fade-up" data-aos-duration="300">
       <mat-card>
@@ -246,6 +269,7 @@
     </ng-template>
   </mat-drawer>
   <mat-drawer-content>
+    <app-spinner-loading></app-spinner-loading>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

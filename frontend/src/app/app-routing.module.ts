@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { LayoutComponent } from './bootstrap5/layout.component';
 // import { MatlayoutComponent } from './layouts/matlayout/matlayout.component';
 import { MainShellComponent } from './layout/fragments/main-shell/main-shell.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -10,7 +9,7 @@ import { AuthGuard } from './core/auth/guards/auth.guard';
 import { LoginComponent } from './login/login.component';
 // import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { UserLayoutComponent } from './users/user-layout/user-layout.component';
-import { MatlayoutComponent } from './matlayout/matlayout.component';
+import { MatlayoutComponent } from './core/template/layout/layout.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
@@ -73,7 +72,7 @@ const routes: Routes = [
   {
     path: 'settings',
     component: MatlayoutComponent,
-    loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
+    loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule),
   },
   // { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 

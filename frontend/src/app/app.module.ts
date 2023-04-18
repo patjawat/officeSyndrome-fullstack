@@ -25,7 +25,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { FragmentsModule } from './layout/fragments/fragments.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -35,7 +34,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { UsersModule } from './users/users.module';
-import { MatlayoutComponent } from './matlayout/matlayout.component';
+import { MatlayoutComponent } from './core/template/layout/layout.component';
+import { LoadingInterceptor } from './core/interceptor/loading.interceptor';
+import { SpinnerLoadingComponent } from './core/components/components/spinner-loading/spinner-loading.component';
 
 @NgModule({
   declarations: [
@@ -44,11 +45,11 @@ import { MatlayoutComponent } from './matlayout/matlayout.component';
     SidebarComponent,
     DashboardComponent,
     MatlayoutComponent,
-    MatHeaderComponent,
     NavbarComponent,
     ProfileComponent,
     LoginComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    SpinnerLoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +76,17 @@ import { MatlayoutComponent } from './matlayout/matlayout.component';
     UsersModule
   
   ],
-  providers: [CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
+  providers: [
+    CookieService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
+      multi:true
+    },
+    {
+      provide:HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
+  ],
 
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

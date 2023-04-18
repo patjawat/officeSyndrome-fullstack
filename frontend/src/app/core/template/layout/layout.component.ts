@@ -12,9 +12,9 @@ export interface Section {
 }
 
 @Component({
-  selector: 'app-matlayout',
-  templateUrl: './matlayout.component.html',
-  styleUrls: ['./matlayout.component.scss']
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss']
 })
 export class MatlayoutComponent {
 
