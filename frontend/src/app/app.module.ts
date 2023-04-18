@@ -24,7 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LayoutComponent } from './bootstrap5/layout.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatHeaderComponent } from './mat-header/mat-header.component';
 import { FragmentsModule } from './layout/fragments/fragments.module';
@@ -44,7 +43,6 @@ import { MatlayoutComponent } from './matlayout/matlayout.component';
     HomeComponent,
     SidebarComponent,
     DashboardComponent,
-    LayoutComponent,
     MatlayoutComponent,
     MatHeaderComponent,
     NavbarComponent,
