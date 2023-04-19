@@ -17,6 +17,10 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
       // { path: 'about', component: AboutComponent },
       // { path: 'upload', component: UploadFileComponent },
     ],
@@ -49,10 +53,7 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent
       },
-      {
-        path: 'profile',
-        component: ProfileComponent
-      },
+      
       {
         path: 'sales',
         component: HomeComponent
