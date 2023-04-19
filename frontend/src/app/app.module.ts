@@ -24,8 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -41,10 +39,8 @@ import { SpinnerLoadingComponent } from './core/components/components/spinner-lo
   declarations: [
     AppComponent,
     HomeComponent,
-    SidebarComponent,
     DashboardComponent,
     MatlayoutComponent,
-    NavbarComponent,
     ProfileComponent,
     LoginComponent,
     LoginLayoutComponent,
