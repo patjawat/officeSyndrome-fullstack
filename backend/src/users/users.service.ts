@@ -10,6 +10,20 @@ export class UsersService {
     @InjectRepository(Users)
     private readonly usersRepository: Repository<Users>
   ) {}
+
+    async getAllUsers(): Promise<Users[]>{
+        return this.usersRepository.find();
+    }
+
+    async findOne(id: string): Promise<Users> {
+          try {
+           return  await this.usersRepository.findOne({where: {id: id}});
+          } catch (error) {
+            return null;
+          }
+        }
+
+        
   async signUp(signupUpDto: SignUpDto): Promise<Users> {
     try {
         const {

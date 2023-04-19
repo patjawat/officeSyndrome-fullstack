@@ -89,8 +89,31 @@
         alt="Soufiane FADIL"
       />
     </div>
+    <div class="side-menu">
+      <mat-card>
+        <mat-card-content>
+          <a [routerLink]="['/dummy']">
+            <div class="row">
+              <div class="col-auto">
+                <div
+                  class="icon-shape-custom bg-secondary text-white rounded-circle"
+                >
+                <i class="fa-regular fa-face-smile-beam"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h3 class="card-title text-uppercase text-muted mb-0">
+                  Dummy
+                </h3>
+                <span class="card-sub-title">ตัวอย่าง</span>
+              </div>
+            </div>
+          </a>
+        </mat-card-content>
+      </mat-card>
+    </div>
 
-    <div class="side-menu" data-aos="fade-up" data-aos-duration="300">
+    <div class="side-menu">
       <mat-card>
         <mat-card-content>
           <a [routerLink]="['/']">
@@ -114,7 +137,7 @@
       </mat-card>
     </div>
 
-    <div class="side-menu" data-aos="fade-up" data-aos-duration="400">
+    <div class="side-menu">
       <mat-card *ngIf="!setting">
         <mat-card-content>
           <a [routerLink]="['/employee']">
@@ -137,7 +160,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="side-menu" data-aos="fade-up" data-aos-duration="500">
+    <div class="side-menu">
       <mat-card *ngIf="!setting">
         <mat-card-content class="p-10">
           <a [routerLink]="['/employee']">
@@ -160,7 +183,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="side-menu" data-aos="fade-up" data-aos-duration="600">
+    <div class="side-menu">
       <mat-card *ngIf="!setting">
         <mat-card-content class="p-10">
           <a [routerLink]="['/employee']">

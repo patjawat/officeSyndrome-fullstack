@@ -33,7 +33,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LoginComponent } from './login/login.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './modules/users/users.module';
 import { MatlayoutComponent } from './core/template/layout/layout.component';
 import { LoadingInterceptor } from './core/interceptor/loading.interceptor';
 import { SpinnerLoadingComponent } from './core/components/components/spinner-loading/spinner-loading.component';
@@ -73,7 +73,8 @@ import { SpinnerLoadingComponent } from './core/components/components/spinner-lo
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    UsersModule
+    UsersModule,
+    
   
   ],
   providers: [

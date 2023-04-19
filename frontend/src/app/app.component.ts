@@ -8,7 +8,7 @@ import * as AOS from "aos";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'HRMS';
 
   ngOnInit(): void {
     AOS.init({

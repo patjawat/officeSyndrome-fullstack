@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,9 @@ export class CoreService {
   durationInSeconds = 5;
   private loading: boolean = false;
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor(
+    private _toastr: ToastrService,
+    private _snackBar: MatSnackBar) {}
 
   openSnackBar(msg:string,action:string) {
     this._snackBar.open(msg, action,{
@@ -18,6 +21,8 @@ export class CoreService {
     });
   }
 
+
+// set การโหลด http fecth data
   setLoading(loading: boolean) {
     this.loading = loading;
   }
@@ -25,6 +30,27 @@ export class CoreService {
   getLoading(): boolean {
     return this.loading;
   }
+  
+
+
+  // toastr show massage
+  alertSuccess(msg:string) {
+
+  }
+
+  showSuccess() {
+    this._toastr.success('บันทึกสำเร็จ!', 'Toastr fun!');
+  }
+
+  showWarning(msg:string) {
+    this._toastr.warning(msg, 'แจ้งเตือน')
+  }
+
+  showErrorMessage(msg:string) {
+    this._toastr.error(msg,'errpr');
+  }
+
+
 
   
 }

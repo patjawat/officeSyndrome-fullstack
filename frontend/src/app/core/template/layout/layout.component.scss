@@ -21,12 +21,9 @@ mat-list-item {
 }
 
 mat-drawer-content{
-    // margin-top: 67px;
-    // padding-left: 30px;
-    // padding-right: 30px;
     padding: 30px;
     margin-top:68px;
-    background-color: #f0f2f8;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 .mat-drawer-container {
     position: relative;
@@ -57,11 +54,6 @@ mat-drawer-content{
 }
 
 
-.side-menu  > mat-card{
-    // padding: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
 
 
 .mat-mdc-raised{
@@ -77,18 +69,22 @@ mat-card > mat-card-content > a{
 .side-menu > mat-card{
     margin-top: 10px;
 }
+.side-menu  > mat-card{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 
 .side-menu > mat-card > mat-card-content{
     
      background-color: #f0f2f8;
-     padding-top: 10px;
-     padding-bottom: 10px;
+     padding-top: 5px;
+     padding-bottom: 4px;
 }
 
 
 .side-menu > mat-card > mat-card-content:hover{
-    background-color: #d0d3dc;
+    background-color: #bbcee9;
     transition: 0.5s;
 }
 mat-card {

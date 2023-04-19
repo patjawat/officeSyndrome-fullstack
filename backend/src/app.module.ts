@@ -23,6 +23,7 @@ import { CategoryModule } from './category/category.module';
 import { UploadsModule } from './uploads/uploads.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+import { DummyModule } from './dummy/dummy.module';
 
 @Module({
   imports: [
@@ -62,7 +63,8 @@ import { diskStorage } from 'multer';
     PostModule,
     PatientModule,
     CategoryModule,
-    UploadsModule
+    UploadsModule,
+    DummyModule
   ],
   controllers: [AppController],
   providers: [AppService, ProductsService],

@@ -26,8 +26,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -58,7 +60,13 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatSnackBarModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    SweetAlert2Module.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 2000,
+    positionClass: 'toast-top-right',
+    })
   ],
   exports: [
     ReactiveFormsModule,
@@ -83,7 +91,11 @@ import { FormsModule } from '@angular/forms';
     MatDividerModule,
     MatDialogModule,
     MatExpansionModule,
-    MatTabsModule
+    MatTabsModule,
+    MatMenuModule,
+    SweetAlert2Module,
+    ToastrModule
+    
   ],
   providers: [MatDatepickerModule],
 })

@@ -38,6 +38,8 @@ export class HomeComponent {
   loadPhoto() {
     this.dummyservice.getAll().subscribe((res: any) => {
       this.photo = res;
+      console.log(res);
+      
     })
     // this.dummyservice.getAll().subscribe({
     //   next: (patient:any) => {

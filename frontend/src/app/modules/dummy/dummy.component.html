@@ -1,0 +1,38 @@
+<div class="page-header">
+    <div class="row align-items-center">
+      <div class="col-6">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a [routerLink]="['/']">Home</a>
+          </li>
+          <li class="breadcrumb-item active">Dummy</li>
+        </ul>
+        <h3 class="page-title">ตัวอย่าง</h3>
+      </div>
+      <div class="col-auto float-end ms-auto d-flex justify-content-end">
+        
+        <div class="view-icons">
+          <a href="employees.html" class="grid-view btn btn-link active"
+            ><i class="fa fa-th"></i
+          ></a>
+          <a href="employees-list.html" class="list-view btn btn-link"
+            ><i class="fa fa-bars"></i
+          ></a>
+        </div>
+  
+        <!-- <a
+          [routerLink]="['/employee/add']"
+          class="btn btn-warning rounded-pill px-3"
+          data-bs-toggle="modal"
+          data-bs-target="#add_employee"
+          ><i class="fa fa-plus"></i> สร้างรายการใหม่</a
+        > -->
+        <button mat-raised-button color="primary" class="rounded-pill px-3" (click)="openAddEditForm()">
+          <i class="fa fa-plus"></i> สร้างรายการใหม่
+        </button>
+  
+      </div>
+    </div>
+  </div>
+
+<app-list-dummy></app-list-dummy>
