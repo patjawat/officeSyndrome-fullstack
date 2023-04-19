@@ -34,9 +34,6 @@ export class FormDummyComponent {
     this._dummyService.create(this.dummyform.value).subscribe({
       next: (data:any) => {
        this._dialogRef.close();
-       this._coreService.showSuccess();
-       
-        
       },error: (error:any) => {
         console.log(error);
         this._coreService.showWarning(error);

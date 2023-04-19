@@ -4,12 +4,17 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Users } from './users.entity';
 import { SignUpDto } from './dto/signup.dto';
 import * as bcrypt from 'bcrypt'
+import * as randomToken from 'rand-token';
+import * as moment from 'moment';
+import { CreateUserDto } from './dto/create-user.dto';
+
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(Users)
     private readonly usersRepository: Repository<Users>
   ) {}
+  
 
     async getAllUsers(): Promise<Users[]>{
         return this.usersRepository.find();
@@ -48,6 +53,8 @@ export class UsersService {
 
 async findOneUser(username: string): Promise<Users | undefined> {
     const user = await this.usersRepository.findOne({where: {username: username}})
-    return user
+    return user;
 }
+
+
 }

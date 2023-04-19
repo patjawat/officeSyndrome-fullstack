@@ -25,7 +25,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { FragmentsModule } from './layout/fragments/fragments.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MatTableModule } from '@angular/material/table';
@@ -69,7 +68,6 @@ import { SpinnerLoadingComponent } from './core/components/components/spinner-lo
     ReactiveFormsModule,
     MatGridListModule,
     MatMenuModule,
-    FragmentsModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,

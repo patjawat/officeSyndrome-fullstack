@@ -1,58 +1,74 @@
-
-<div class="table-responsive" tabindex="1" style="overflow: hidden; outline: none;">
-    <table class="table table-custom table-lg mb-0" id="orders">
-        <thead>
-        <tr>
-            <th>
-                <input class="form-check-input select-all" type="checkbox" data-select-all-target="#orders" id="defaultCheck1">
-            </th>
-            <th>ชื่อ-นามสกุล</th>
-            <th>โทรศัพท์</th>
-            <th>แผนก/ฝ่าย</th>
-            <th>สิทธิ์</th>
-            <th>สภานะ</th>
-            <th class="text-end">ดำเนินการ</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of dummy">
-            <td>
-                <input class="form-check-input" type="checkbox">
-            </td>
-            <td>
-              <img src="assets/images/avatar4.jpg" data-toggle="tooltip" data-placement="top" title="" alt="Avatar" class="w35 h35 rounded" data-original-title="Avatar Name">
-              {{item.fname}} {{item.lname}}
-            </td>
-            <td>{{item.phone}}</td>
-            <td>May 23, 2021</td>
-            <td>Admin</td>
-            <td>
-                <span class="badge bg-primary">Processing</span>
-            </td>
-            <td class="text-end">
-                
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                    <mat-icon>more_vert</mat-icon>
-                  </button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                      <mat-icon>remove_red_eye</mat-icon>
-                      <span>แสดง</span>
-                    </button>
-                    <button mat-menu-item>
-                      <mat-icon>edit</mat-icon>
-                      <span (click)="openEditForm()">แก้ไข</span>
-                    </button>
-                    <button mat-menu-item>
-                      <mat-icon>restore_from_trash</mat-icon>
-                      <span>ลบทิ้ง</span>
-                    </button>
-                  </mat-menu>
-
-               
-            </td>
-        </tr>
-        
-        </tbody>
-    </table>
-  </div>
+<div
+  class="table-responsive"
+  tabindex="1"
+  style="overflow: hidden; outline: none"
+>
+  <table class="table table-custom table-lg mb-0" id="orders">
+    <thead>
+      <tr>
+        <th>
+          <input
+            class="form-check-input select-all"
+            type="checkbox"
+            data-select-all-target="#orders"
+            id="defaultCheck1"
+          />
+        </th>
+        <th>ชื่อ-นามสกุล</th>
+        <th>โทรศัพท์</th>
+        <th>แผนก/ฝ่าย</th>
+        <th>สิทธิ์</th>
+        <th>สภานะ</th>
+        <th class="text-end">ดำเนินการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dummy">
+        <td>
+          <input class="form-check-input" type="checkbox" />
+        </td>
+        <td>
+          <img
+            src="assets/images/avatar4.jpg"
+            data-toggle="tooltip"
+            data-placement="top"
+            title=""
+            alt="Avatar"
+            class="w35 h35 rounded"
+            data-original-title="Avatar Name"
+          />
+          {{ item.fname }} {{ item.lname }}
+        </td>
+        <td>{{ item.phone }}</td>
+        <td>May 23, 2021</td>
+        <td>Admin</td>
+        <td>
+          <span class="badge bg-primary">Processing</span>
+        </td>
+        <td class="text-end">
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>remove_red_eye</mat-icon>
+              <span>แสดง</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>edit</mat-icon>
+              <span (click)="openEditForm()">แก้ไข</span>
+            </button>
+            <button mat-menu-item (click)="deleteItem(item)">
+              <mat-icon>restore_from_trash</mat-icon>
+              <span> Delete </span>
+            </button>
+          </mat-menu>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

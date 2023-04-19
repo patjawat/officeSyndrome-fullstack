@@ -12,8 +12,6 @@ const routes: Routes = [
   {
     path: '',
     component: MatlayoutComponent,
-    //   redirectTo: 'home',
-
     canActivate: [AuthGuard],
     children: [
       { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -26,28 +24,16 @@ const routes: Routes = [
     ],
   },
   {
-    path: '',
-    // component: LoginLayoutComponent,
-    children: [{ path: 'login', component: LoginComponent }],
-    // canActivate: [RoleGuard]
+    path: 'login',
+    component: LoginComponent,
   },
-  // {
-  //   path: '',
-  //   canActivate: [AuthGuard],
-  //   pathMatch: 'full',
-  //   redirectTo: 'home',
-  //   children: [{ path: 'login', component: LoginComponent }],
-  // },
-  // {
-  //   path: 'login',
-  //   // component: LoginLayoutComponent,
-  //   children: [{ path: 'login', component: LoginComponent }],
-  //   // canActivate: [RoleGuard]
-  // },
+
   {
     path: '',
     // component: LayoutComponent,
     // component: MatlayoutComponent,
+    canActivate: [AuthGuard],
+
     children: [
       {
         path: 'home',

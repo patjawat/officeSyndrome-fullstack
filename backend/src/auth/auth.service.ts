@@ -2,6 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import * as bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Users } from 'src/users/users.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class AuthService {
@@ -9,6 +12,14 @@ export class AuthService {
         private userService: UsersService,
         private jwtService: JwtService,
     ) {}
+
+    public getCookiesForLogOut() {
+        return [
+          'Authentication=; HttpOnly; Path=/; Max-Age=0',
+          'Refresh=; HttpOnly; Path=/; Max-Age=0'
+        ];
+      }
+      
 
     async validateUser(username: string, password: string): Promise<any> {
         const user = await this.userService.findOneUser(username)
@@ -30,4 +41,5 @@ export class AuthService {
             accessToken: this.jwtService.sign(payload)
         }
     }
+
 }

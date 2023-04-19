@@ -23,20 +23,10 @@ export class DummyComponent {
 
   }
 
-  dummy:[] = [];
 
-  getAll(){
-  this._dummyService.getAll().subscribe({
-    next:(data:any)=> {
-      this.dummy = data;
-      
-    },error(err) {
-      
-    },
-  })
-  }
+
   openAddEditForm(){
-    this._dialog.open(FormDummyComponent,{
+    const dialogRef = this._dialog.open(FormDummyComponent,{
       width: '50%',
     })
   }
@@ -47,7 +37,7 @@ export class DummyComponent {
   }
 
   msgSucsess(){
-    this._coreService.showSuccess();
+    // this._coreService.showSuccess();
     // this._toastrService.success('Hello world!', 'Toastr fun!');
   }
 

@@ -19,7 +19,7 @@ export class DummyController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.dummyService.findOne(+id);
+    return this.dummyService.findOne(id);
   }
 
   @Patch(':id')
@@ -29,6 +29,6 @@ export class DummyController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.dummyService.remove(+id);
+    return this.dummyService.remove(id);
   }
 }

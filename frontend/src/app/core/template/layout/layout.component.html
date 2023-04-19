@@ -59,6 +59,24 @@
           >PROFILE</span
         >
       </button>
+      <button mat-menu-item (click)="setActiveItem('profile')">
+        <fa-icon
+          [icon]="['fas', 'address-card']"
+          [ngStyle]="{
+            color: activeItem === 'profile' ? 'blue' : 'rgba(0,0,0,.54)'
+          }"
+          class="font-awesome"
+          size="lg"
+        >
+        </fa-icon>
+        <span
+        (click)="logout()"
+          [ngStyle]="{
+            'font-weight': activeItem === 'profile' ? 'bold' : 'normal'
+          }"
+          >logout</span
+        >
+      </button>
     </mat-menu>
 
     <!-- <button

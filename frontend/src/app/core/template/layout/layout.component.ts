@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMenu } from 'src/app/core/interface/IMenu';
 import { HttpclientService } from 'src/app/core/services/HttpClientServices';
-import * as AOS from "aos";
-
 
 export interface Section {
   name: string;
@@ -39,11 +37,6 @@ export class MatlayoutComponent {
 
   ngOnInit() {
 
-    AOS.init({
-      duration: 750,
-      delay: 150,
-    })
-    
     this.menuList = this.httpService.getList<IMenu>("/assets/menu.json")
     this.route = this.router.url;
     console.log(this.router.url);
@@ -54,11 +47,10 @@ export class MatlayoutComponent {
     }
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      AOS.refresh()
-    }, 500)
+  logout() {
+    localStorage.removeItem('token');
   }
+
 
   
 }

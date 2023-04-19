@@ -31,15 +31,19 @@ export class DummyService {
     return this._dummeryRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} dummy`;
+  findOne(id: any) {
+    return this._dummeryRepository.findBy({id: id});
+    
+
   }
 
   update(id: number, updateDummyDto: UpdateDummyDto) {
     return `This action updates a #${id} dummy`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} dummy`;
+  async remove(id: any) {
+    return await  this._dummeryRepository.delete({ id: id });
   }
+
+
 }

@@ -38,8 +38,8 @@ export class CoreService {
 
   }
 
-  showSuccess() {
-    this._toastr.success('บันทึกสำเร็จ!', 'Toastr fun!');
+  showSuccess(msg:string) {
+    this._toastr.success(msg, 'Success!');
   }
 
   showWarning(msg:string) {

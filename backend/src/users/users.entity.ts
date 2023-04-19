@@ -1,6 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn, OneToMany } from 'typeorm';
 import { UserRole } from './Roles';
 import { Post } from 'src/post/entities/post.entity';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class Users {
@@ -18,6 +19,15 @@ export class Users {
 
     @UpdateDateColumn()
     updated: Date
+
+    @Exclude()
+    public currentHashedRefreshToken?: string;
+
+    @Column({ nullable: true,name:'refreshtoken' })
+    refreshToken: string;
+  
+    @Column({ type: 'date', nullable: true, name:'refreshtokenexp' })
+    refreshTokenExp: string;
 
     @Column({ type: "enum", enum: UserRole, default: UserRole.USER })
     role: UserRole;

@@ -3,7 +3,7 @@ import { DummyService } from '../dummy.service';
 import { CoreService } from 'src/app/core/services/core.service';
 import { FormDummyComponent } from '../form-dummy/form-dummy.component';
 import { MatDialog } from '@angular/material/dialog';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-list-dummy',
   templateUrl: './list-dummy.component.html',
@@ -23,7 +23,11 @@ export class ListDummyComponent {
   dummy = new Array<any>();
 
   ngOnInit(): void {
+  
     this.getAll();
+    this._dummyService.Refetchrequired.subscribe(()=>{
+      this.getAll();
+    });
   }
 
   getAll(){
@@ -44,5 +48,32 @@ export class ListDummyComponent {
       width: '50%',
     })
   }
+
+  async deleteItem(item:any){
+   await  Swal.fire({
+      title: 'ลบข้อมูลนี้ ?',
+      text: "ยืนยันลบ " + item.fname+" "+item.lname,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then(async(result) => {
+      if (result.isConfirmed) {
+        console.log(item);
+        
+        await this._dummyService.delete(item).subscribe({
+          next: (result) => {
+            console.log('succss'); 
+          }
+        });
+        
+        
+      }
+    })
+    
+  }
+
+  
 
 }
