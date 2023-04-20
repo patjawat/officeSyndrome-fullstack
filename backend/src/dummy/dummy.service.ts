@@ -37,8 +37,13 @@ export class DummyService {
 
   }
 
-  update(id: number, updateDummyDto: UpdateDummyDto) {
-    return `This action updates a #${id} dummy`;
+  async update(id: any, updateDummyDto: UpdateDummyDto) {
+    try {
+      return await this._dummeryRepository.update(id, updateDummyDto);
+
+    } catch (error) {
+      throw new HttpException('Todo not found', HttpStatus.NOT_FOUND);
+    }
   }
 
   async remove(id: any) {

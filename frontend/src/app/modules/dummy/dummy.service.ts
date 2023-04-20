@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, tap } from 'rxjs';
+import { Observable, Subject, tap } from 'rxjs';
 import { CoreService } from 'src/app/core/services/core.service';
 import Swal from 'sweetalert2'
 
@@ -23,7 +23,7 @@ export class DummyService {
   }
 
 
-  getAll() {
+  getAll():Observable<any> {
     return this._http.get(this.url);
   }
 
@@ -36,6 +36,14 @@ export class DummyService {
     );
   }
 
+  // update(id:number,data:any):Observable<any>  {
+  update(id:number,data:any){
+    console.log(id,data);
+    
+    // return data;
+    return this._http.patch(`${this.url}/${id}`,data)
+  }
+  
    delete(item: any){
           return  this._http.delete(`${this.url}/${item.id}`).pipe(
             tap(() => {

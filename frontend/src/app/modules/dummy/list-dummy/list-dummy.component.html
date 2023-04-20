@@ -58,9 +58,9 @@
               <mat-icon>remove_red_eye</mat-icon>
               <span>แสดง</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="edit(item)">
               <mat-icon>edit</mat-icon>
-              <span (click)="openEditForm()">แก้ไข</span>
+              <span>แก้ไข</span>
             </button>
             <button mat-menu-item (click)="deleteItem(item)">
               <mat-icon>restore_from_trash</mat-icon>

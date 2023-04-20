@@ -24,7 +24,9 @@ export class DummyController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDummyDto: UpdateDummyDto) {
-    return this.dummyService.update(+id, updateDummyDto);
+    console.log(id);
+    
+    // return this.dummyService.update(id, updateDummyDto);
   }
 
   @Delete(':id')

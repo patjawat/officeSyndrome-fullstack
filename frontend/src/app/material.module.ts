@@ -30,6 +30,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatExpansionModule,
     MatTabsModule,
     MatMenuModule,
+    MatAutocompleteModule,
     SweetAlert2Module.forRoot(),
     ToastrModule.forRoot({
       timeOut: 3000,
@@ -93,6 +95,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatExpansionModule,
     MatTabsModule,
     MatMenuModule,
+    MatAutocompleteModule,
     SweetAlert2Module,
     ToastrModule
     

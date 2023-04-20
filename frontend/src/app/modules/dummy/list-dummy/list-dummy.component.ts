@@ -43,11 +43,15 @@ export class ListDummyComponent {
     })
   }
 
-  openEditForm(){
-    this._dialog.open(FormDummyComponent,{
+
+  edit(data:any){
+    const dialogRef = this._dialog.open(FormDummyComponent,{
       width: '50%',
+      data:data
     })
+   
   }
+
 
   async deleteItem(item:any){
    await  Swal.fire({

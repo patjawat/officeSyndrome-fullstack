@@ -27,6 +27,7 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  
 }
 
 html,
@@ -39,12 +40,17 @@ body{
     line-height: 1.643em;
     font-family: Prompt, sans-serif !important;
     background: #3f51b5 !important;
-	// background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     font-weight: 400;
 }
 mat-form-field{
   width: 100%;
+  font-family: Prompt, sans-serif !important;
 }
+
+mat-card,mat-card-title,mat-label,mat-card-subtitle,.mat-mdc-tab .mdc-tab__content{
+  font-family: Prompt, sans-serif !important; 
+}
+
 .card {
   border: none;
   background-color: rgb(255, 255, 255) !important;

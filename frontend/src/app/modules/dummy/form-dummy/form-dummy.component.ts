@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DummyService } from '../dummy.service';
 import { CoreService } from 'src/app/core/services/core.service';
 import { SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
@@ -11,15 +11,17 @@ import { SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
   styleUrls: ['./form-dummy.component.scss']
 })
 export class FormDummyComponent {
-
+  
   secondsLeft: number = 1000;
   dummyform:FormGroup
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private _dialogRef: MatDialogRef<FormDummyComponent>,
     private fb: FormBuilder,
     private _dummyService:DummyService,
     private _coreService:CoreService,
     public readonly swalTargets: SwalPortalTargets
+    
   ) {
     this.dummyform = fb.group({
       fname:['',Validators.required],
@@ -29,8 +31,26 @@ export class FormDummyComponent {
     })
   }
 
+  ngOnInit(): void {
+    this.dummyform.patchValue(this.data)
+  }
+
   onFormSubmit(){
     if (this.dummyform.valid) {
+      if (this.data) {
+        
+        this._dummyService.update(this.data.id,this.dummyform.value).subscribe({
+          next: (val: any) => {
+            this._dialogRef.close(true);
+            this._coreService.showSuccess('แก้ไขสำเร็จ !');
+          },
+          error: (err: any) => {
+            console.error(err);
+          },
+
+        });
+      } else {
+
     this._dummyService.create(this.dummyform.value).subscribe({
       next: (data:any) => {
        this._dialogRef.close();
@@ -39,6 +59,7 @@ export class FormDummyComponent {
         this._coreService.showWarning(error);
       }
     })
+  }
   }
   }
 

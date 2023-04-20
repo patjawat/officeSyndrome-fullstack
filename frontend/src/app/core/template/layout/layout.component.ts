@@ -47,9 +47,10 @@ export class MatlayoutComponent {
     }
   }
 
-  logout() {
-    localStorage.removeItem('token');
-    console.log('logout');
+  async logout() {
+    await localStorage.removeItem('token');
+    await this.router.navigate(['/login']);
+    
     
   }
 

@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
+import { tap, map } from 'rxjs/operators';
+ 
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +16,13 @@ export class AuthService {
   
   apiurl='http://127.0.0.1:3000/api/auth/signin';
   constructor(
-    private http:HttpClient,
+    private _http:HttpClient,
     private router: Router
     ) {
 
    }
    ProceedLogin(UserCred:any){
-     return this.http.post(this.apiurl,UserCred);
+     return this._http.post(this.apiurl,UserCred);
    }
    IsLoggedIn(){
      return localStorage.getItem('token')!=null;
@@ -41,4 +44,12 @@ export class AuthService {
      }
    }
    
+
+   opts:any = [];
+   getData() {
+         return this.opts.length ?
+           of(this.opts) :
+           this._http.get('https://jsonplaceholder.typicode.com/users').pipe(tap(data => this.opts = data))
+   }
+
 }
