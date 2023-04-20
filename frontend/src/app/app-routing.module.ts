@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { UserLayoutComponent } from './modules/users/user-layout/user-layout.component';
 import { MatlayoutComponent } from './core/template/layout/layout.component';
 import { UsersComponent } from './modules/users/users.component';
+import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 
 const routes: Routes = [
   {
@@ -24,10 +25,38 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: '',
+    component: LoginLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      // { path: 'about', component: AboutComponent },
+      // { path: 'upload', component: UploadFileComponent },
+    ],
   },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  // },
 
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      
+      {
+        path: 'sales',
+        component: HomeComponent
+      },
+      { path: 'employee', loadChildren: () => import('./modules/employee/employee.module').then(m => m.EmployeeModule) },
+    ]
+  },
   {
     path: '',
     // component: LayoutComponent,
@@ -57,7 +86,11 @@ const routes: Routes = [
     component: MatlayoutComponent,
     loadChildren: () => import('./modules/settings/settings.module').then(m => m.SettingsModule),
   },
-  { path: 'dummy',component: MatlayoutComponent, loadChildren: () => import('./modules/dummy/dummy.module').then(m => m.DummyModule) },
+  { 
+    path: 'dummy',
+    canActivate: [AuthGuard],
+
+    component: MatlayoutComponent, loadChildren: () => import('./modules/dummy/dummy.module').then(m => m.DummyModule) },
   // { path: 'employee', loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule) }
 
 

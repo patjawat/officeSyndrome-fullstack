@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router,NavigationEnd  } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-login-layout',
@@ -11,19 +11,16 @@ export class LoginLayoutComponent implements OnInit {
   name = 'Get Current Url Route Demo';
   currentRoute: string = '';
 
-  constructor(private router: Router){
+  constructor(private router: Router) {
     console.log(router.url);
-    
+
 
   }
-
- 
-
   ngOnInit(): void {
-console.log(this.router.url);
-console.log('theme');
-
-
+    console.log(this.router.url);
+    console.log('theme')
   }
+
+
 }
 

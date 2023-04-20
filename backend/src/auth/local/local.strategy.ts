@@ -13,7 +13,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     const user = await this.authService.validateUser(username, password)
     if (!user) {
       throw new UnauthorizedException({
-          message: ['Something\'s is wrong I can feel it ผู้ใช้งานไม่ถูกต้อง'],
+          message: ['ชื่อผู้ใช้งาน หรือ รหัสผ่านไม่ถูกต้อง'],
       })
     }
     return user

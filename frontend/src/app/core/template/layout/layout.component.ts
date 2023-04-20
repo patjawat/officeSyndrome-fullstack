@@ -49,6 +49,8 @@ export class MatlayoutComponent {
 
   logout() {
     localStorage.removeItem('token');
+    console.log('logout');
+    
   }
 
 
