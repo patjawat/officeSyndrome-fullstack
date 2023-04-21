@@ -8,6 +8,9 @@ export class Category {
     @Column()
     name:string;
 
+    @Column()
+    title:string;
+
     @OneToMany(type => Post, posts => posts.category)
     posts: Post[]
 }

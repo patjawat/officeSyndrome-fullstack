@@ -34,6 +34,7 @@ import { UsersModule } from './modules/users/users.module';
 import { MatlayoutComponent } from './core/template/layout/layout.component';
 import { LoadingInterceptor } from './core/interceptor/loading.interceptor';
 import { SpinnerLoadingComponent } from './core/components/components/spinner-loading/spinner-loading.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SpinnerLoadingComponent } from './core/components/components/spinner-lo
     ProfileComponent,
     LoginComponent,
     LoginLayoutComponent,
-    SpinnerLoadingComponent
+    SpinnerLoadingComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

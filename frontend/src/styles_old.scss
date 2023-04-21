@@ -69,6 +69,25 @@ mat-card,mat-card-title,mat-label,mat-card-subtitle,.mat-mdc-tab .mdc-tab__conte
     font-family: kanit;
 }
 
+//เส้นขอบวงกลม
+.rounded-corners-gradient-borders {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 100%;
+  background: linear-gradient(45deg, #0d6efd 0%, #198754 100%);
+  // background-color: #8c1818;
+
+  margin:0px;
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1), box-shadow 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.rounded-corners-gradient-borders:hover {
+  transform: scale(1.1) rotate(1deg);
+  transform-origin: center center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 0 0 48px rgba(0, 0, 0, 0.35);
+}
+//จบเส้นขอบวงกลม
+
 // mat-card {
 //   border: none;
 //   background-color: rgb(255, 255, 255) !important;

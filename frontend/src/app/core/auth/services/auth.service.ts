@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { tap, map } from 'rxjs/operators';
  
@@ -45,11 +45,17 @@ export class AuthService {
    }
    
 
-   opts:any = [];
-   getData() {
-         return this.opts.length ?
-           of(this.opts) :
-           this._http.get('https://jsonplaceholder.typicode.com/users').pipe(tap(data => this.opts = data))
-   }
+  //  getData(){
+  //   return this._http.get('https://jsonplaceholder.typicode.com/users')
+  //     .pipe(
+  //       map((response:any = []) => response.map((item:any) => item))
+  //     )
+  // }
+   opts = [];
 
+   getData() {
+     return this.opts.length ?
+       of(this.opts) :
+       this._http.get<any>('https://jsonplaceholder.typicode.com/users').pipe(tap(data => this.opts = data))
+   }
 }

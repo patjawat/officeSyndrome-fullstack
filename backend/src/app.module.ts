@@ -24,6 +24,7 @@ import { UploadsModule } from './uploads/uploads.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { DummyModule } from './dummy/dummy.module';
+import { CategoryGroupModule } from './category-group/category-group.module';
 
 @Module({
   imports: [
@@ -64,7 +65,8 @@ import { DummyModule } from './dummy/dummy.module';
     PatientModule,
     CategoryModule,
     UploadsModule,
-    DummyModule
+    DummyModule,
+    CategoryGroupModule
   ],
   controllers: [AppController],
   providers: [AppService, ProductsService],

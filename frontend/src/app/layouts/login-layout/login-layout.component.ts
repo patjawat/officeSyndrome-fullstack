@@ -12,13 +12,12 @@ export class LoginLayoutComponent implements OnInit {
   currentRoute: string = '';
 
   constructor(private router: Router) {
-    console.log(router.url);
+    // console.log(router.url);
 
 
   }
   ngOnInit(): void {
-    console.log(this.router.url);
-    console.log('theme')
+    // console.log(this.router.url);
   }
 
 

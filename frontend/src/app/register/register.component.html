@@ -1,0 +1,106 @@
+<br>
+<form [formGroup]="formRegister" (ngSubmit)="register()">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>ชื่อ</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="ชื่อ"
+            formControlName="fname"
+          />
+          <i
+            class="fa-regular fa-user"
+            matSuffix
+            style="margin-right: 10px"
+          ></i>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>นามสกุล</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="นามสกุล"
+            formControlName="lname"
+          />
+          <i
+            class="fa-regular fa-user"
+            matSuffix
+            style="margin-right: 10px"
+          ></i>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="แผนก/ฝ่าย"
+        formControlName="department"
+        matInput
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        [displayWith]="displayFn"
+      >
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option"
+        >
+         {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <!-- <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="department" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="Email"
+        formControlName="email"
+      />
+
+      <i
+        class="fa-solid fa-envelope"
+        matSuffix
+        style="margin-right: 10px"
+      ></i>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        formControlName="password"
+      />
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Confirm Password"
+        formControlName="confirm_password"
+      />
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Register</button>
+  </form>

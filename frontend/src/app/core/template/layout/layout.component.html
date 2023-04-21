@@ -104,6 +104,7 @@
         <h4>patjawat@gmail.com</h4>
       </div>
       <img
+      class="rounded-corners-gradient-borders"
         src="https://patjawat.github.io/images/avatar.jpg"
         alt="Soufiane FADIL"
       />
@@ -271,6 +272,29 @@
       </mat-card>
     </div>
 
+    <div class="side-menu" *ngIf="setting">
+      <mat-card>
+        <mat-card-content class="p-10">
+          <a [routerLink]="['/settings/category']">
+            <div class="row">
+              <div class="col-auto">
+                <div
+                  class="icon-shape-custom bg-secondary text-white rounded-circle"
+                >
+                  <i class="fa-solid fa-gear"></i>
+                </div>
+              </div>
+              <div class="col">
+                <h3 class="card-title text-uppercase text-muted mb-0">
+                  หมวดหมู่
+                </h3>
+                <span class="card-sub-title">การตั้งค่าระบบ</span>
+              </div>
+            </div>
+          </a>
+        </mat-card-content>
+      </mat-card>
+    </div>
     <!-- <ul>
       <li>การตั้งค่าระบบ</li>
       <li>

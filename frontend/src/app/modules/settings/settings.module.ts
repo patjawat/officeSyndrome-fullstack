@@ -5,11 +5,13 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from '../../material.module';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
   declarations: [
-    SettingsComponent
+    SettingsComponent,
+    CategoryComponent
   ],
   imports: [
     CommonModule,
