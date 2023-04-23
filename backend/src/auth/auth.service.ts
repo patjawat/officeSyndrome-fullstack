@@ -36,7 +36,6 @@ export class AuthService {
              sub: user.id,
              role: user.role
              }
-
         return {
             accessToken: this.jwtService.sign(payload)
         }

@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 
   responsedata: any;
   formLogin: FormGroup
+  active:boolean=false;
 
   constructor(
     private fb: FormBuilder,

@@ -52,7 +52,6 @@ export class AuthService {
   //     )
   // }
    opts = [];
-
    getData() {
      return this.opts.length ?
        of(this.opts) :

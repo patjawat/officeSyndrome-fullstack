@@ -1,19 +1,34 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCategoryGroupDto } from './dto/create-category-group.dto';
 import { UpdateCategoryGroupDto } from './dto/update-category-group.dto';
+import { CategoryGroup } from './entities/category-group.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class CategoryGroupService {
+
+  constructor(
+    @InjectRepository(CategoryGroup)
+    private _categoryRepository: Repository<CategoryGroup>
+  ) { }
   create(createCategoryGroupDto: CreateCategoryGroupDto) {
-    return 'This action adds a new categoryGroup';
+    const newCategoryGroup = this._categoryRepository.create(createCategoryGroupDto);
+    return this._categoryRepository.save(newCategoryGroup);
   }
 
-  findAll() {
-    return `This action returns all categoryGroup`;
+  async findAll(): Promise<CategoryGroup[]> {
+    return await this._categoryRepository.find({
+      relations: {
+        categorys: true,
+      },
+    });
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} categoryGroup`;
+  async findOne(id: number) {
+    return await this._categoryRepository.findOne({ where: { id: id },
+      relations:{
+        categorys:true,
+    } });
   }
 
   update(id: number, updateCategoryGroupDto: UpdateCategoryGroupDto) {

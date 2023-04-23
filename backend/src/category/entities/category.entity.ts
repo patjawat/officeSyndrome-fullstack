@@ -1,5 +1,6 @@
+import { CategoryGroup } from 'src/category-group/entities/category-group.entity';
 import { Post } from 'src/post/entities/post.entity';
-import { Column, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Category {
     @PrimaryGeneratedColumn()
@@ -8,9 +9,9 @@ export class Category {
     @Column()
     name:string;
 
-    @Column()
-    title:string;
-
     @OneToMany(type => Post, posts => posts.category)
     posts: Post[]
+
+    @ManyToOne(type => CategoryGroup, categoryGroup => categoryGroup.categorys)
+    categoryGroup:CategoryGroup
 }

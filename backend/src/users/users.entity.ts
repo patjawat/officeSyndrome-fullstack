@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn, OneToMany } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn,CreateDateColumn,UpdateDateColumn, OneToMany, BeforeInsert } from 'typeorm';
 import { UserRole } from './Roles';
 import { Post } from 'src/post/entities/post.entity';
 import { Exclude } from 'class-transformer';
+import * as crypto from 'crypto';
 
 @Entity()
 export class Users {
@@ -34,4 +35,10 @@ export class Users {
 
     @OneToMany(type => Post, posts => posts.user)
     posts: Post[]
+
+    // @BeforeInsert()
+    // hashPassword() {
+    // this.password = crypto.createHmac('sha256', this.password).digest('hex');
+    // }
+
 }

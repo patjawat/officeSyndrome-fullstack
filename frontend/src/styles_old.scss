@@ -68,6 +68,11 @@ mat-card,mat-card-title,mat-label,mat-card-subtitle,.mat-mdc-tab .mdc-tab__conte
     margin: 0 0 16px;
     font-family: kanit;
 }
+.mat-mdc-tab-labels {
+  display: flex;
+  flex: 1 0 auto;
+  margin-bottom: 17px;
+}
 
 //เส้นขอบวงกลม
 .rounded-corners-gradient-borders {
