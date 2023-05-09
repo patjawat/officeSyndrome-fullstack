@@ -32,14 +32,22 @@ export class UsersService {
   async signUp(signupUpDto: SignUpDto): Promise<Users> {
     try {
         const {
-            username,
+          username,
+            fname,
+            lname,
             password,
+            email,
+            department
         } = signupUpDto
 
         const hashedPassword = await bcrypt.hashSync(password, 10)
 
         const user = this.usersRepository.create({
-            username,
+          username,
+            fname,
+            lname,
+            department,
+            email,
             password: hashedPassword,
         })
 
@@ -51,8 +59,8 @@ export class UsersService {
     }
 }
 
-async findOneUser(username: string): Promise<Users | undefined> {
-    const user = await this.usersRepository.findOne({where: {username: username}})
+async findOneUser(email: string): Promise<Users | undefined> {
+    const user = await this.usersRepository.findOne({where: {email: email}})
     return user;
 }
 

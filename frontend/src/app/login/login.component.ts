@@ -48,6 +48,8 @@ export class LoginComponent implements OnInit {
   }
 
   ProceedLogin() {
+    // console.log(this.formLogin.value);
+    
     if (this.formLogin.valid) {
       this.service.ProceedLogin(this.formLogin.value).subscribe({
         next: (result) => {

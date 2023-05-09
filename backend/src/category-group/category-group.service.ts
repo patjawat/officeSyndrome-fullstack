@@ -24,6 +24,23 @@ export class CategoryGroupService {
       },
     });
   }
+
+  // async findAllDepartment(): Promise<CategoryGroup[]> {
+  async findAllDepartment() {
+   const data = await this._categoryRepository.find({
+    select:["id"],
+      where:{
+        name:'department'
+      },
+      relations: {
+        categorys: true,
+      },
+    });
+
+    return data;
+     
+    
+  }
   async findOne(id: number) {
     return await this._categoryRepository.findOne({ where: { id: id },
       relations:{

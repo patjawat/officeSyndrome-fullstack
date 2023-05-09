@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -35,7 +35,12 @@ import { MatlayoutComponent } from './core/template/layout/layout.component';
 import { LoadingInterceptor } from './core/interceptor/loading.interceptor';
 import { SpinnerLoadingComponent } from './core/components/components/spinner-loading/spinner-loading.component';
 import { RegisterComponent } from './register/register.component';
-
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MtxGridModule } from '@ng-matero/extensions/grid';
+import { MtxSelectModule } from '@ng-matero/extensions/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,12 +69,20 @@ import { RegisterComponent } from './register/register.component';
     MatRadioModule,
     MatCardModule,
     ReactiveFormsModule,
+    FormsModule,
     MatGridListModule,
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
     UsersModule,
+    AutocompleteLibModule,
+    NgSelectModule,
+    NgOptionHighlightModule,
+    NgxMatSelectSearchModule,
+    MtxGridModule,
+    MtxSelectModule
+    
     
   
   ],

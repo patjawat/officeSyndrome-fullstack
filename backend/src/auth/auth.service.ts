@@ -33,6 +33,10 @@ export class AuthService {
     async signIn(user: any): Promise<any> {
         const payload = { 
             username: user.username,
+            fname:user.fname,
+            lname:user.lname,
+            fullname:user.fname+ ' '.repeat(1) +user.lname,
+            department:user.department,
              sub: user.id,
              role: user.role
              }

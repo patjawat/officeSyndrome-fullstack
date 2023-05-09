@@ -2,6 +2,7 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&family=Sarabun:wght@100;200;300;400;500&display=swap');
+@import "~@ng-select/ng-select/themes/material.theme.css";
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -47,7 +48,7 @@ mat-form-field{
   font-family: Prompt, sans-serif !important;
 }
 
-mat-card,mat-card-title,mat-label,mat-card-subtitle,.mat-mdc-tab .mdc-tab__content{
+mat-card,mat-card-title,mat-label,mat-card-subtitle,.mat-mdc-tab .mdc-tab__content,.mdc-button__label{
   font-family: Prompt, sans-serif !important; 
 }
 

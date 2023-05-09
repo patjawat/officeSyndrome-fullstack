@@ -9,8 +9,20 @@ export class Users {
     @PrimaryGeneratedColumn('uuid')
     id: string
 
-    @Column({ unique: true })
+    @Column()
     username: string
+
+    @Column()
+    fname: string
+
+    @Column()
+    lname: string
+
+    @Column({ unique: true })
+    email: string
+
+    @Column()
+    department: number;
 
     @Column()
     password: string

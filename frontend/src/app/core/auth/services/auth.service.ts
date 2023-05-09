@@ -56,5 +56,8 @@ export class AuthService {
      return this.opts.length ?
        of(this.opts) :
        this._http.get<any>('https://jsonplaceholder.typicode.com/users').pipe(tap(data => this.opts = data))
+      //  this._http.get<any>('http://127.0.0.1:3000/api/common').pipe(tap(data => this.opts = data[0].categorys))
+     
+       
    }
 }

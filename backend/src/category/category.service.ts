@@ -50,6 +50,21 @@ export class CategoryService {
     return this._categoryRepository.findOneBy({ id: id });
   }
 
+  // ค้นหาจากชื่อหมวดหมู่
+  findByName(name:any){
+    return this._categoryRepository.find({  
+      relations: {
+      categoryGroup: false,
+    },
+      where: {
+        categoryGroup: {
+          name: name
+        }
+    },
+    select:["id","name"]
+   });
+  }
+
   async update(id: number, data: UpdateCategoryDto) {
     return this._categoryRepository.update(id, data);
   }

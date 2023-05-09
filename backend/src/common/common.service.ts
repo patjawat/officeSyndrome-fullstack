@@ -24,6 +24,11 @@ export class CommonService {
     return this._cateoryGroupservice.findAll()
   }
 
+
+  findAllDepartment() {
+    return this._cateoryGroupservice.findAllDepartment()
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} common`;
   }

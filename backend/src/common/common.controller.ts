@@ -17,6 +17,11 @@ export class CommonController {
     return this.commonService.findAll();
   }
 
+  @Get('department')
+  department() {
+    return this.commonService.findAllDepartment();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.commonService.findOne(+id);

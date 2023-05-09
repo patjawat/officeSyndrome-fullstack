@@ -3,7 +3,19 @@ import { IsNotEmpty, Matches } from "class-validator";
 export class SignUpDto {
 
     @IsNotEmpty()
-    username: string
+    username: string;
+
+    @IsNotEmpty()
+    fname: string;
+
+    @IsNotEmpty()
+    lname: string;
+
+    @IsNotEmpty()
+    email: string;
+
+    @IsNotEmpty()
+    department: number;
 
     @IsNotEmpty()
     @Matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, {
